@@ -1,5 +1,5 @@
 from flask import Blueprint
-from utils import *
+from utils import read_json
 from logs.loging import *
 
 api_blueprint = Blueprint('api_blueprint', __name__, url_prefix='/api')

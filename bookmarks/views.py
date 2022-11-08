@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect
-from utils import *
+from utils import get_posts_bookmarks, add_bookmarks, remove_bookmarks
 from logs.log_views import *
 
 

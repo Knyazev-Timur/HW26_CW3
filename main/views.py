@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
-from utils import *
+from utils import get_posts_all, get_posts_bookmarks, get_comments_by_post_id, get_post_by_pk, get_posts_by_user, \
+    search_for_posts, get_tag
 from logs.log_views import log_set
 
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='templates', url_prefix='/')
