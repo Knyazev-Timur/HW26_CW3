@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect
 from utils import get_posts_bookmarks, add_bookmarks, remove_bookmarks
-from logs.log_views import *
+from logs.log_views import log_set
 
 
 bookmarks_blueprint = Blueprint('bookmarks_blueprint', __name__, template_folder='templates', url_prefix='/bookmarks')
