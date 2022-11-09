@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory
 from main.views import main_blueprint
 from bookmarks.views import bookmarks_blueprint
-from tests.api import api_blueprint
+from main.api import api_blueprint
 
 POST_PATH = 'data/posts.json'
 UPLOAD_FOLDER = 'uploads/images'
