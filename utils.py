@@ -26,7 +26,6 @@ def save_json(file_name, data_for_save):
     """
     :param file_name: str
     :param data_for_save: str
-    :return:
     Получает данные data_for_save и имя файла save_file
     для сохранения JSON
     """
