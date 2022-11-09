@@ -1,4 +1,6 @@
 import json
+from json import JSONDecodeError
+
 from post_view import View
 
 views = View()
@@ -11,8 +13,13 @@ def read_json(file_name):
     получает имя JSON файла, считывает файл
     и возвращает список словарей
     """
-    with open(file_name, 'r', encoding='UTF-8') as read_file:
-        return json.load(read_file)
+    try:
+        with open(file_name, 'r', encoding='UTF-8') as read_file:
+            return json.load(read_file)
+    except FileNotFoundError:
+        return
+    except JSONDecodeError:
+        return
 
 
 def save_json(file_name, data_for_save):
@@ -23,8 +30,13 @@ def save_json(file_name, data_for_save):
     Получает данные data_for_save и имя файла save_file
     для сохранения JSON
     """
-    with open(file_name, 'w', encoding='UTF-8') as save_file:
-        json.dump(data_for_save, save_file, ensure_ascii=False)
+    try:
+        with open(file_name, 'w', encoding='UTF-8') as save_file:
+            json.dump(data_for_save, save_file, ensure_ascii=False)
+    except FileNotFoundError:
+        return
+    except JSONDecodeError:
+        return
 
 
 def get_posts_all():
