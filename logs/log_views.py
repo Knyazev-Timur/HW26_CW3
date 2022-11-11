@@ -18,5 +18,5 @@ def log_set(file_path, message):
 
     log_file.warning(message)
     consol_log.info(message)
-    log_file.handlers = []
-    consol_log.handlers = []
+    # log_file.handlers = []
+    # consol_log.handlers = []
