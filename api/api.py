@@ -28,3 +28,6 @@ def api_post_pk(post_id):
     for post in all_posts:
         if post_id == post.get('pk'):
             return post
+
+# print(api_all_posts())
+# print(api_post_pk(1))

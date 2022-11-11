@@ -17,3 +17,5 @@ def logger_settings(file_path, message):
 
     logger_file.info(message)
     consol_loger.info(message)
+    logger_file.handlers = []
+    consol_loger.handlers = []
