@@ -1,11 +1,10 @@
 from flask import Blueprint, jsonify
-from utils import read_json, get_posts_all
+from utils import get_posts_all
 import logging
 from logs.loggers import create_logger
 
 create_logger()
-
-logger = logging.getLogger('basic')
+logger = logging.getLogger('api')
 
 api_blueprint = Blueprint('api_blueprint', __name__, url_prefix='/api')
 
