@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect
-from utils import get_posts_bookmarks, add_bookmarks, remove_bookmarks
+from utils import get_posts_bookmarks, add_bookmarks, remove_bookmarks, get_like
 import logging
 from logs.loggers import set_logger_bookmarks
 
@@ -33,3 +33,5 @@ def remove_bookmarks_page(postid):
     if len(posts) == 0:
         return redirect("/", code=302)
     return render_template('bookmarks.html', posts=posts)
+
+

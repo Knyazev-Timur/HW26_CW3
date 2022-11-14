@@ -111,6 +111,23 @@ def get_post_by_pk(pk):
             save_json('data/posts.json', all_posts)
             return post
 
+def get_like(postid):
+    all_posts = read_json('data/posts.json')
+    verify_like = views.get_verify_like(postid)
+    for index, post in enumerate(all_posts):
+        if postid == post.get('pk') and verify_like:
+            views.get_like_discard(postid)
+            all_posts[index]['likes_count'] -= 1
+            save_json('data/posts.json', all_posts)
+            return post
+
+        elif postid == post.get('pk') and verify_like is False:
+            views.get_like_add(postid)
+            all_posts[index]['likes_count'] += 1
+            save_json('data/posts.json', all_posts)
+            return post
+
+
 
 def add_bookmarks(postid):
     """

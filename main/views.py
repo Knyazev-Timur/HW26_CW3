@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from utils import get_posts_all, get_posts_bookmarks, get_comments_by_post_id, get_post_by_pk, get_posts_by_user, \
-    search_for_posts, get_tag
+    search_for_posts, get_tag, get_like
 import logging
 from logs.loggers import logger_viewers
 
@@ -49,3 +49,16 @@ def page_tag(tagname):
     posts = get_tag(tagname)
     logger_main.info(f'Запрос /tag/{tagname}')
     return render_template('tag.html', posts=posts, tag=tagname)
+
+@main_blueprint.route('/like/<int:postid>')
+def push_like(postid):
+
+    like = get_like(postid)
+
+    comments = get_comments_by_post_id(postid)
+    post = get_post_by_pk(postid)
+    count_comment = len(comments)
+    logger_main.info(f'Запрос /posts/{postid}')
+    print(like)
+    return render_template('post.html', post=post, comments=comments, count=count_comment)
+

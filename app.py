@@ -16,6 +16,7 @@ app.register_blueprint(bookmarks_blueprint)
 app.register_blueprint(api_blueprint)
 # создан по заданию для тестирования API
 
+# {{ post.content|truncate(50) }} шаблон Jinja  для реза при выводе
 
 @app.errorhandler(404)
 def page_404(error):
