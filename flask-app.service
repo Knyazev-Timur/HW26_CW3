@@ -1,0 +1,10 @@
+[Unit]
+Description=Flask app service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/charfull/flask_app
+ExecStart=/home/charfull/flask_app/venv/bin/python app.py
+
+[Install]]
+WantedBy=multi-user.target
