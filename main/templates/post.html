@@ -61,6 +61,16 @@
           <p class="item__text"></p>
         </div>
 
+        <div>
+        <a>&nbsp;</a>
+          <button type="button" class="item__bookmark-btn">
+            <a href="/like/{{post.pk}}"><img src="/static/img/like.png" alt="" class="item__bookmark-icon" width="26"></a>
+            </button>
+            <span class="item__counter-text">{{post.likes_count}}</span>
+
+        </div>
+
+
         <div class="item__bottom">
           <div class="item__post-info">
             <p class="item__comments-counter">Комментариев: {{count}}</p>
