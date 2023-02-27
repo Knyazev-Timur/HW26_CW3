@@ -6,5 +6,5 @@ After=network.target
 WorkingDirectory=/home/charfull/flask_app
 ExecStart=/home/charfull/flask_app/venv/bin/python app.py
 
-[Install]]
+[Install]
 WantedBy=multi-user.target
